@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,16 +16,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <body>
+  <body class="ar">
     <!-- Start Header -->
     <div class="header" id="header">
       <div class="container">
-        <a href="#" class="logo"><span>B</span>ouda &nbsp; <span>M</span>ohamed</a>
+        <a id="logo" href="#" class="logo" data-translate="header[0]"><span>B</span>ouda &nbsp; <span>M</span>ohamed</a>
         <ul class="main-nav">
-          <li><a href="#Services">Services</a></li>
-          <li><a href="#PROJECTS">PROJECTS</a></li>
-          <li><a href="#ABOUT ME">ABOUT ME</a></li>
-          <li><a href="#MY SKILLS">MY SKILLS</a></li>
+          <li><a data-translate="header[1]" href="#Services">Services</a></li>
+          <li><a data-translate="header[2]" href="#PROJECTS">PROJECTS</a></li>
+          <li><a data-translate="header[3]" href="#ABOUT ME">ABOUT ME</a></li>
+          <li><a data-translate="header[4]" href="#MY SKILLS">MY SKILLS</a></li>
+          <li id="lang" class="p-relative">
+            <div>
+              <img id="lang-img" src="imgs/lang/eng.png" alt="">
+              <p data-translate="header[5]">English</p>
+            </div>
+            <ul class="mega_menu">
+
+              <li data-lang="eng">
+                <img src="imgs/lang/eng.png" alt="">
+                <p>English</p>
+              </li>
+              <li data-lang="fr">
+                <img src="imgs/lang/fr.png" alt="">
+                <p>Francais</p>
+              </li>
+              <li data-lang="ar">
+                <img src="imgs/lang/ar.png" alt="">
+                <p>اللغة العربية</p>
+              </li>
+              
+            </ul>
+          </li>
+          
         </ul>
       </div>
     </div>
@@ -35,9 +58,9 @@
     <div class="landing">
       <div class="container">
         <div class="text">
-          <h1>Heey</h1>
-          <h1>My Name Is ,</h1>
-          <p>Bouda Mohamed</p>
+          <h1 data-translate="landing[0]" >Heey</h1>
+          <h1 data-translate="landing[1]">My Name Is ,</h1>
+          <p data-translate="landing[2]">Bouda Mohamed</p>
         </div>
       </div>
     </div>
@@ -47,50 +70,50 @@
 
     <div id="Services" class="service">
       <div class="main_title">
-        <h2 class="global-title">Services</h2>
-      <p>I'm a Full Stack Developer with expertise in HTML, CSS, JavaScript, and React for the front-end, and PHP with Laravel and Codeigniter4 for the back-end. I can build complete web applications, ensuring excellent user interfaces and strong server-side functionality. My aim is to provide efficient and seamless software solutions tailored to your project requirements</p>
-
+        <h2 data-translate="Services.title" class="global-title">Services</h2>
+        <p data-translate="Services.desc">I'm a Full Stack Developer with expertise in HTML, CSS, JavaScript, and React for the front-end, and PHP with Laravel and Codeigniter4 for the back-end. I can build complete web applications, ensuring excellent user interfaces and strong server-side functionality. My aim is to provide efficient and seamless software solutions tailored to your project requirements</p>
       </div>
       
       <div class="container">
         <div class="flip-card">
           <div class="flip-card-inner">
               <div class="flip-card-front">
-                  <p class="title">CRAFTING DIGITAL EXPERIENCES</p>
+                  <p data-translate="Services.qualite[0].title" class="title">CRAFTING DIGITAL EXPERIENCES</p>
                   <!-- <p>Hover Me</p> -->
               </div>
               <div class="flip-card-back">
                   <!-- <p class="title">BACK</p> -->
-                  <p>I possess a talent for expertly crafting memorable and user-centric digital experiences.</p>
+                  <p data-translate="Services.qualite[0].desc">I possess a talent for expertly crafting memorable and user-centric digital experiences.</p>
               </div>
           </div>
         </div>
         <div class="flip-card">
           <div class="flip-card-inner">
               <div class="flip-card-front">
-                  <p class="title">TECHNICAL SKILLS</p>
+                  <p data-translate="Services.qualite[1].title" class="title">TECHNICAL SKILLS</p>
                   <!-- <p>Hover Me</p> -->
               </div>
               <div class="flip-card-back">
                   <!-- <p class="title">BACK</p> -->
-                  <p>I'm a Full Stack Developer with expertise in JavaScript, React, PHP framworks,and databases. I excel at creating web applications by seamlessly integrating front-end and back-end technologies.</p>
+                  <p data-translate="Services.qualite[1].desc">I'm a Full Stack Developer with expertise in JavaScript, React, PHP framworks,and databases. I excel at creating web applications by seamlessly integrating front-end and back-end technologies.</p>
               </div>
           </div>
         </div>
         <div class="flip-card">
           <div class="flip-card-inner">
               <div class="flip-card-front">
-                  <p class="title">PROBLEM SOLVER BY NATURE</p>
+                  <p data-translate="Services.qualite[2].title" class="title">PROBLEM SOLVER BY NATURE</p>
                   <!-- <p>Hover Me</p> -->
               </div>
               <div class="flip-card-back">
                   <!-- <p class="title">BACK</p> -->
-                  <p>I have a natural inclination for problem-solving, and I find genuine satisfaction in discovering effective solutions.</p>
+                  <p data-translate="Services.qualite[2].desc">I have a natural inclination for problem-solving, and I find genuine satisfaction in discovering effective solutions.</p>
               </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- End Services -->
 
 
     <!-- Start Portfolio -->
@@ -103,11 +126,11 @@
 
       <div class="container">
         <ul class="shuffle">
-          <li data-name="ALL" class="active">All</li>
-          <li data-name="web">WEB</li>
-          <li data-name="app-web">APP WEB</li>
-          <li data-name="app-mobile">APP MOBILE</li>
-          <li data-name="app-desktop">WEB DESKTOP</li>
+          <li data-translate="project[0]" data-name="ALL" class="active">All</li>
+          <li data-translate="project[1]" data-name="web">WEB</li>
+          <li data-translate="project[2]" data-name="app-web">APP WEB</li>
+          <li data-translate="project[3]" data-name="app-mobile">APP MOBILE</li>
+          <li data-translate="project[4]" data-name="app-desktop">WEB DESKTOP</li>
           
         </ul>
       </div>
@@ -123,7 +146,7 @@
     <!-- About me -->
     
     <div class="main_title">
-      <h2 class="global-title">ABOUT ME</h2>
+      <h2 data-translate="Aboutme.title" class="global-title">ABOUT ME</h2>
     </div>
     <div id="ABOUT ME" class="about_me">
       
@@ -131,8 +154,8 @@
       <div class="card">
         <div class="img"><img src="imgs/56.JPG" alt=""></div>
         <div class="info">
-          <span>who is bouda mohamed ? </span>
-          <p class="info">Full Stack Developer
+          <span data-translate="Aboutme.question">who is bouda mohamed ? </span>
+          <p data-translate="Aboutme.desc" class="info">Full Stack Developer
           Hello back, I'm a web Developer and I'm fascinated by the intersection of design and functionality on the web. I enjoy creating user-friendly and visually appealing websites , with a keen eye for detail and a love for problem-solving, I'm constantly honing my skills to stay up-to-date with the latest web technologies. When I'm not coding, I like exploring new design trends, and experimenting with personal projects .</p>
         </div>
         
@@ -158,13 +181,13 @@
     <div id="MY SKILLS" class="our-skills">
 
       <div class="main_title">
-        <h2 class="global-title">MY SKILLS</h2>
+        <h2 data-translate="header[3]" class="global-title">MY SKILLS</h2>
       </div>
 
       <div class="container">
         
         <div class="skills">
-          <p class="section_category_p">web technology</p>
+          <p data-translate="myskills[0]" class="section_category_p">web technology</p>
           <div class="skill">
             <h3>HTML AND CSS <span>80%</span></h3>
             <div class="the-progress">
@@ -191,7 +214,7 @@
           </div>
         </div>
         <div class="skills">
-          <p class="section_category_p">programming language.</p>
+          <p data-translate="myskills[1]" class="section_category_p">programming language.</p>
           <div class="skill">
             <h3>JAVA <span>60%</span></h3>
             <div class="the-progress">
@@ -260,7 +283,7 @@
               </div>
              
           </div> -->
-          <div class="footer-bottom">
+          <div id="info_footer" class="footer-bottom">
               <div class="footer-description">
                   <h3>Bouda Mohamed</h3>
                   <p>boudamohamed060@gmail.com<p>
