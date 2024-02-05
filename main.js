@@ -1,9 +1,15 @@
 
+let change_lang = document.getElementById('lang'),
+mega_menu = change_lang.querySelector('.mega_menu');
+
+let nav = document.querySelectorAll('.shuffle li');
+
+let aff_pro =  document.querySelector('.imgs-container');
 
 const translations = {
     eng: {
         name : "Bouda Mohamed",
-        header: ['Services', 'Projects', 'About me', 'My Skills','English'],
+        header: ['Bouda mohamed','Services', 'Projects', 'About me', 'My Skills','English'],
         landing: ['Heey', 'My Name Is', 'Bouda Mohamed'],
         Services: {
             title: "Services",
@@ -28,7 +34,7 @@ const translations = {
             question: 'who is Bouda Mohamed?',
             desc: `Full Stack Developer Hello back, I'm a web Developer and I'm fascinated by the intersection of design and functionality on the web. I enjoy creating user-friendly and visually appealing websites, with a keen eye for detail and a love for problem-solving, I'm constantly honing my skills to stay up-to-date with the latest web technologies. When I'm not coding, I like exploring new design trends, and experimenting with personal projects.`,
         },
-        project : ['All','WEB','APP WEB','APP MOBILE','WEB DESKTOP'],
+        project : ['MY RECENT PROJECTS','All','WEB','APP WEB','APP MOBILE','WEB DESKTOP'],
         
         myskills: ['web technology', 'programming language.'],
 
@@ -36,7 +42,7 @@ const translations = {
     },
     fr: {
         name : "Bouda Mohamed",
-        header: ['Services', 'Projets', 'À propos de moi', 'Mes compétences','Francais'],
+        header: ['Bouda mohamed','Services', 'Projets', 'À propos de moi', 'Mes compétences','Francais'],
         landing: ['Heey', 'Je m\'appelle', 'Bouda Mohamed'],
         Services: {
             title: "Services",
@@ -56,7 +62,7 @@ const translations = {
                 },
             ]
         },
-        project : ['All','WEB','APP WEB','APP MOBILE','WEB DESKTOP'],
+        project : ['MES PROJETS RÉCENTS','All','WEB','APP WEB','APP MOBILE','WEB DESKTOP'],
         Aboutme: {
             title: 'À PROPOS DE MOI',
             question: 'qui est Bouda Mohamed ?',
@@ -87,33 +93,16 @@ const translations = {
                 },
             ]
         },
-        project : ['الكل','مواقع','تطبيقات الويب','تطبيقات الهاتف','تطبيقات الحاسوب'],
+        project : ['مشاريعي الحديثة','الكل','مواقع','تطبيقات الويب','تطبيقات الهاتف','تطبيقات الحاسوب'],
         Aboutme: {
             title: 'عني',
             question: 'من هو بودا محمد؟',
             desc: `مطور Full Stack مرحبًا بالجميع ، أنا مطور ويب وأنا مفتون بتقاطع التصميم والوظيفة على الويب. أستمتع بإنشاء مواقع ويب سهلة الاستخدام وجذابة بصريًا ، مع عين حادة للتفاصيل وحب لحل المشكلات ، أنا دائمًا أقوم بتحسين مهاراتي للبقاء على اطلاع بأحدث تقنيات الويب. عندما لا أقوم بالبرمجة ، أستمتع باستكشاف اتجاهات التصميم الجديدة وتجربة المشاريع الشخصية.`,
         },
-        myskills: ['تقنية الويب', 'لغة البرمجة.'],
+        myskills: ['تقنيات الويب', 'لغات البرمجة.'],
         footer: ['بودا محمد', 'كل الحقوق محفوظة']
     },
 };
-
-var lang = '';
-
-if(localStorage.getItem('lang')){
-    lang = localStorage.getItem('lang');
-    handleLang(localStorage.getItem('lang'));
-
-}
-else{
-    lang = 'eng';
-    translate('eng');
-}
-
-
-
-
-
 
 
 const projects = [
@@ -211,6 +200,28 @@ const projects = [
 ];
 
 
+var lang = '';
+
+if(localStorage.getItem('lang')){
+    lang = localStorage.getItem('lang');
+    handleLang(lang);
+    handleProject('ALL');
+}
+else{
+    lang = 'eng';
+    translate('eng');
+    handleProject('ALL');
+}
+
+// translate('ar');
+
+
+
+
+
+
+
+
 function translate(l){
 
 
@@ -296,8 +307,6 @@ function translate(l){
 
 
 
-let change_lang = document.getElementById('lang'),
-mega_menu = change_lang.querySelector('.mega_menu');
 
 change_lang.addEventListener('mouseover', () => {
     mega_menu.classList.add('hovred');
@@ -308,32 +317,32 @@ mega_menu.addEventListener('mouseout', () => {
 
 mega_menu.querySelectorAll('li').forEach(ele=>{
     ele.onclick = ()=>{
-        console.log(ele.dataset.lang);
-        handleLang(ele.dataset.lang);
-        
-        
+        mega_menu.classList.remove('hovred');
+        handleLang(ele.dataset.lang); 
     }
 })
 
-function handleLang(lang){
-    document.getElementById('lang-img').src = `imgs/lang/${lang}.png`;
-    if(lang == 'ar'){
+function handleLang(lange){
+    localStorage.setItem('lang',lange);
+    document.getElementById('lang-img').src = `imgs/lang/${lange}.png`;
+    if(lange == 'ar'){
+        mega_menu.classList.remove('eng');
+        mega_menu.classList.add('ar');
         document.documentElement.setAttribute('dir', 'rtl');
     }
     else{
+        mega_menu.classList.remove('ar');
+        mega_menu.classList.add('eng');
         document.documentElement.setAttribute('dir', 'ltr');
     }
-    translate(lang);
-    localStorage.setItem('lang',lang);
+    translate(lange);
+    lang = lange;
+    handleProject('ALL');
 
 }
 
-let nav = document.querySelectorAll('.shuffle li');
-
-let aff_pro =  document.querySelector('.imgs-container');
 
 
-handleProject('ALL');
 
 nav.forEach(ele=>{
     ele.onclick = ()=>{
