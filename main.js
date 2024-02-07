@@ -209,6 +209,7 @@ if(localStorage.getItem('lang')){
 }
 else{
     lang = 'eng';
+    document.getElementById('lang-img').src = 'imgs/lang/eng.png';
     translate('eng');
     handleProject('ALL');
 }
